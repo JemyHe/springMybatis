@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.spring.mapper.DeptMapper">
+
+    <delete id="delete" parameterType="int">
+        delete from dept where deptno = #{deptno}
+    </delete>
+
+
+    <select id="findAll" resultType="com.test.spring.entity.Dept">
+        select dept_no,dname,loc from dept
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.test.spring.entity.Dept">
+        select deptno,dname,loc from dept where
+    </select>
+
+    <select id="findByPage" parameterType="com.test.spring.page.Search" resultType="com.test.spring.entity.Dept">
+		select * from dept
+		<where>
+            <if test="params.deptNo!=null">
+                deptNo = #{params.deptNo}
+            </if>
+            <if test="params.dname!=null">
+                dname = #{params.dname}
+            </if>
+            <if test="params.loc!=null">
+                loc = #{params.loc}
+
+            </if>
+        </where>
+        limit #{firstRows},#{rows}
+    </select>
+
+    <insert id="save" parameterType="com.test.spring.entity.Dept">
+        insert into dept(deptno,dname,loc) values(#{deptno},#{dname},#{loc})
+    </insert>
+
+    <update id="update" parameterType="com.test.spring.entity.Dept">
+        update dept set dname=#{dname}, loc=#{loc} where deptno=#{deptno}
+    </update>
+
+</mapper>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="springmybatis@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="springmybatis">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="rbac"/>
+    <schema id="7" parent="1" name="seckill"/>
+    <schema id="8" parent="1" name="shiro"/>
+    <schema id="9" parent="1" name="simalldb"/>
+    <schema id="10" parent="1" name="test"/>
+    <schema id="11" parent="1" name="zheng"/>
+    <table id="12" parent="2" name="bonus"/>
+    <table id="13" parent="2" name="dept"/>
+    <table id="14" parent="2" name="emp"/>
+    <table id="15" parent="2" name="my_order"/>
+    <table id="16" parent="2" name="my_product"/>
+    <table id="17" parent="2" name="salgrade"/>
+    <column id="18" parent="12" name="ENAME">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="19" parent="12" name="JOB">
+      <Position>2</Position>
+      <DataType>varchar(9)|0</DataType>
+    </column>
+    <column id="20" parent="12" name="SAL">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="12" name="COMM">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="22" parent="13" name="DEPTNO">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="13" name="DNAME">
+      <Position>2</Position>
+      <DataType>varchar(14)|0</DataType>
+    </column>
+    <column id="24" parent="13" name="LOC">
+      <Position>3</Position>
+      <DataType>varchar(13)|0</DataType>
+    </column>
+    <key id="25" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>DEPTNO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="14" name="EMPNO">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="14" name="ENAME">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="28" parent="14" name="JOB">
+      <Position>3</Position>
+      <DataType>varchar(9)|0</DataType>
+    </column>
+    <column id="29" parent="14" name="MGR">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="14" name="HIREDATE">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="31" parent="14" name="SAL">
+      <Position>6</Position>
+      <DataType>decimal(10)|0</DataType>
+    </column>
+    <column id="32" parent="14" name="COMM">
+      <Position>7</Position>
+      <DataType>decimal(10)|0</DataType>
+    </column>
+    <column id="33" parent="14" name="DEPTNO">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="34" parent="14" name="FK_DEPTNO">
+      <ColNames>DEPTNO</ColNames>
+    </index>
+    <key id="35" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EMPNO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="36" parent="14" name="FK_DEPTNO">
+      <ColNames>DEPTNO</ColNames>
+      <RefSchemaName>springmybatis</RefSchemaName>
+      <RefTableName>dept</RefTableName>
+      <RefColNames>DEPTNO</RefColNames>
+    </foreign-key>
+    <column id="37" parent="15" name="order_id">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="15" name="order_state">
+      <Position>2</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="15" name="user_id">
+      <Position>3</Position>
+      <DataType>int(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="40" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>order_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="16" name="product_id">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="16" name="storage">
+      <Position>2</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="43" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>product_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="17" name="GRADE">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="45" parent="17" name="LOSAL">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="46" parent="17" name="HISAL">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+  </database-model>
+</dataSource>
